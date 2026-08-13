@@ -39,14 +39,13 @@ def run_agent(model, system_prompt, user_prompt, tools, tool_mapping):
         message = response["message"]
         
       
-        # إذا لم يطلب أي Tool انتهينا
+       
         if not message.get("tool_calls"):
             return message["content"]
 
-        # أضف رسالة المساعد
+        
         messages.append(message)
 
-        # نفذ كل Tool طلبها النموذج
         for tool_call in message["tool_calls"]:
             
             tool_name = tool_call["function"]["name"]
