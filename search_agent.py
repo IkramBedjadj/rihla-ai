@@ -2,9 +2,9 @@ import ollama
 from langchain_ollama import ChatOllama
 from run_agent import run_agent
 import search_tools
-# ==========================
+
 # LLM
-# ==========================
+
 SYSTEM_PROMPT="""
 You are an intelligent Algeria Tourism Research Agent.
 
