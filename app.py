@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-from supervisor_agent import get_supervisor_response  # ← بدل search_agent
+from supervisor_agent import get_supervisor_response 
 
 
 
@@ -18,7 +18,7 @@ def search():
 
     question = data["question"]
 
-    answer = get_supervisor_response(question)  # ← بدل get_response(question, SYSTEM_PROMPT)
+    answer = get_supervisor_response(question)  
 
     return jsonify({
         "answer": answer
