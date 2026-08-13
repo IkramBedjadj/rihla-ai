@@ -5,16 +5,15 @@ import search_tools
 from run_agent import run_agent
 
 
-# ============================================================
+
 # LLM
-# ============================================================
+
 
 MODEL = "llama3.1:8b"
 
 
-# ============================================================
 # PLANNER SYSTEM PROMPT
-# ============================================================
+
 
 SYSTEM_PROMPT = """
 You are an expert local travel planner specialized in Algeria.
@@ -282,9 +281,8 @@ STRICT COMPLIANCE RULES
 """
 
 
-# ============================================================
+
 # TOOLS
-# ============================================================
 
 tools = [
     search_tools.tavily_tool_def,
@@ -295,9 +293,9 @@ tools = [
 ]
 
 
-# ============================================================
+
 # TOOL MAPPING
-# ============================================================
+
 
 tool_mapping = {
     "tavily_search_tool": search_tools.tavily_search_tool,
@@ -308,9 +306,8 @@ tool_mapping = {
 }
 
 
-# ============================================================
+
 # PLANNER
-# ============================================================
 
 def get_response(question: str,SYSTEM_PROMPT: str) -> str:
 
@@ -326,9 +323,9 @@ def get_response(question: str,SYSTEM_PROMPT: str) -> str:
     return response
 
 
-# ============================================================
+
 # TEST
-# ============================================================
+
 
 if __name__ == "__main__":
 
