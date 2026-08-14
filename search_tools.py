@@ -1,7 +1,7 @@
 import os
 import xml.etree.ElementTree as ET
 
-# --- Third-party ---
+
 import requests
 from dotenv import load_dotenv
 from tavily import TavilyClient
