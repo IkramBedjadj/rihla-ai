@@ -3,23 +3,20 @@ import ollama
 
 from run_agent import run_agent
 import planner_agent
-import search_agent  # عدل الاستيراد حسب اسم الملف/الدالة عندك
+import search_agent 
 
 
 MODEL = "llama3.1:8b"
 
 
-# ============================================================
-# WRAPPERS — تحويل الوكلاء الفرعيين إلى "أدوات"
-# ============================================================
 
 def call_planner_agent(question: str) -> str:
-    """يستدعي وكيل تخطيط الرحلات (يبني خطط سفر مفصلة)."""
+    """calls the planner agent"""
     return planner_agent.get_response(question, planner_agent.SYSTEM_PROMPT)
 
 
 def call_research_agent(question: str) -> str:
-    """يستدعي وكيل البحث (يجاوب على أسئلة معلوماتية عن الجزائر)."""
+    """calls the search agent"""
     return search_agent.get_response(question, search_agent.SYSTEM_PROMPT)
 
 
@@ -77,9 +74,7 @@ research_tool_def = {
 }
 
 
-# ============================================================
 # SUPERVISOR SYSTEM PROMPT
-# ============================================================
 
 SUPERVISOR_PROMPT = """
 You are a friendly Algerian assistant supervisor. You are the
