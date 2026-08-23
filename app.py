@@ -1,28 +1,30 @@
-from flask import Flask, render_template, request, jsonify
-from supervisor_agent import get_supervisor_response 
+import os
+import gradio as gr
+from supervisor_agent import get_supervisor_response
 
+def plan_trip(destination, duration, interests, extra_request):
+    if not destination.strip():
+        return "⚠️ الرجاء إدخال وجهة."
+    
+    question = f"""
+Plan a {duration} trip to {destination}.
+Interests: {", ".join(interests)}
+Additional preferences: {extra_request if extra_request.strip() else "No additional preferences."}
 
+Create a practical travel itinerary including:
+- tourist attractions
+- cultural and natural sites
+- food recommendations
+- transportation
+- useful local tips
+"""
+    result = get_supervisor_response(question)
+    return result
 
-app = Flask(__name__)
-
-
-@app.route("/")
-def home():
-    return render_template("index.html")
-
-
-@app.route("/search", methods=["POST"])
-def search():
-
-    data = request.get_json()
-
-    question = data["question"]
-
-    answer = get_supervisor_response(question)  
-
-    return jsonify({
-        "answer": answer
-    })
-
-if __name__ == "__main__":
-    app.run(debug=True)
+demo = gr.Interface(
+    fn=plan_trip,
+    inputs=[
+        gr.Textbox(label="📍 Where do you want to go?", placeholder="Example: Béjaïa, Ghardaïa, Oran..."),
+        gr.Dropdown(["1 day", "2 days", "3 days", "4 days", "5 days", "7 days"], label="Duration", value="3 days"),
+        gr.CheckboxGroup(["Nature", "Culture & Heritage", "Beaches", "Food", "History", "Adventure", "Relaxation"], label="Interests"),
+        gr.Textbox(label="💬 Tell us what you
