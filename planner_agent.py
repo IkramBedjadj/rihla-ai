@@ -1,5 +1,5 @@
 import json
-import ollama
+
 import search_tools
 
 from run_agent import run_agent
@@ -9,7 +9,7 @@ from run_agent import run_agent
 # LLM
 
 
-MODEL = "llama3.1:8b"
+MODEL = "llama-3.1-8b-instant"
 
 
 # PLANNER SYSTEM PROMPT
