@@ -1,0 +1,7 @@
+flask
+ollama
+langchain-ollama
+requests
+python-dotenv
+tavily-python
+streamlit
