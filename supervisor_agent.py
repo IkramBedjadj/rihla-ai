@@ -1,5 +1,4 @@
 import json
-import ollama
 
 from run_agent import run_agent
 import planner_agent
