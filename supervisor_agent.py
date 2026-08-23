@@ -6,7 +6,7 @@ import planner_agent
 import search_agent 
 
 
-MODEL = "llama3.1:8b"
+MODEL = "llama-3.1-8b-instant"
 
 
 
