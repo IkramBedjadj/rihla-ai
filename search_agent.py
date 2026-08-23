@@ -1,5 +1,4 @@
-import ollama
-from langchain_ollama import ChatOllama
+
 from run_agent import run_agent
 import search_tools
 
@@ -183,7 +182,7 @@ def get_response(question: str,SYSTEM_PROMPT: str) -> str:
    tools =[search_tools.tavily_tool_def,search_tools.weather_tool_def,search_tools.places_search_tool_def,]
 
    response = run_agent(
-        model="llama3.1:8b",
+        model="llama-3.1-8b-instant",
         system_prompt=SYSTEM_PROMPT,
         user_prompt=question,
         tools=tools,
