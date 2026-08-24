@@ -182,7 +182,7 @@ def get_response(question: str,SYSTEM_PROMPT: str) -> str:
    tools =[search_tools.tavily_tool_def,search_tools.weather_tool_def,search_tools.places_search_tool_def,]
 
    response = run_agent(
-        model="llama-3.1-8b-instant",
+        model="openai/gpt-oss-20b",
         system_prompt=SYSTEM_PROMPT,
         user_prompt=question,
         tools=tools,
