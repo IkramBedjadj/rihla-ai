@@ -153,6 +153,7 @@ def get_supervisor_response(question: str) -> str:
         user_prompt=question,
         tools=tools,
         tool_mapping=tool_mapping,
+        max_tokens=1024,
     )
 
 
