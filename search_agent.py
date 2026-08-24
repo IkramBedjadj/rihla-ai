@@ -186,7 +186,6 @@ def get_response(question: str,SYSTEM_PROMPT: str) -> str:
         system_prompt=SYSTEM_PROMPT,
         user_prompt=question,
         tools=tools,
-        max_tokens=1024,
         tool_mapping={
         "tavily_search_tool": search_tools.tavily_search_tool,
         "weather_tool":search_tools.weather_tool,
