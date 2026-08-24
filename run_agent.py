@@ -19,6 +19,7 @@ def run_agent(model, system_prompt, user_prompt, tools, tool_mapping):
             model=model,
             messages=messages,
             tools=tools,
+            max_tokens=1024,
         )
         message = response.choices[0].message
 
