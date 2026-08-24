@@ -317,6 +317,7 @@ def get_response(question: str,SYSTEM_PROMPT: str) -> str:
         user_prompt=question,
         tools=tools,
         tool_mapping=tool_mapping,
+        max_tokens=1024,
         
     )
 
