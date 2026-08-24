@@ -5,7 +5,7 @@ import planner_agent
 import search_agent 
 
 
-MODEL = "llama-3.1-8b-instant"
+MODEL = "openai/gpt-oss-20b"
 
 
 
