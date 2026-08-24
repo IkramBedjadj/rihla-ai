@@ -9,7 +9,7 @@ from run_agent import run_agent
 # LLM
 
 
-MODEL = "llama-3.1-8b-instant"
+MODEL = "openai/gpt-oss-20b"
 
 
 # PLANNER SYSTEM PROMPT
